@@ -4,7 +4,12 @@ export type ChatTurn = { role: "user" | "assistant"; content: string };
 
 export type AiRequest = {
   kind: AiKind;
-  input: Record<string, string>;
+  input: Partial<
+    Record<
+      "purpose" | "recipient" | "tone" | "notes" | "horizon" | "tasks" | "style" | "topic" | "message",
+      string
+    >
+  >;
   history?: ChatTurn[];
 };
 
