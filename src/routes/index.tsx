@@ -148,7 +148,7 @@ function Dashboard() {
               label="Completed"
               value={String(stats.done)}
               hint="Finished tasks"
-              trend={stats.done > 0 ? `+${stats.done}` : undefined}
+              {...(stats.done > 0 ? { trend: `+${stats.done}` } : {})}
             />
             <StatCard
               icon={Sparkles}
